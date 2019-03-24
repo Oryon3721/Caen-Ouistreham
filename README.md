@@ -3,7 +3,7 @@
 
    Page d'acceuil :
 
-   <img src="https://user-images.githubusercontent.com/48830209/54878438-46cf5b00-4e2d-11e9-9a9e-1c4e044f2121.jpg"                     width="216" height="448" border="5"/> <img src="https://user-images.githubusercontent.com/48830209/54878209-b93e3c00-4e29-11e9-8179-f7cda9f23227.jpg" width="216" height="448"/>
+   <img src="https://user-images.githubusercontent.com/48830209/54878438-46cf5b00-4e2d-11e9-9a9e-1c4e044f2121.jpg"                     width="216" height="448" border="5"/> <img src="https://user-images.githubusercontent.com/48830209/54878209-b93e3c00-4e29-11e9-8179-f7cda9f23227.jpg" width="216" height="448"/> <img src="https://user-images.githubusercontent.com/48830209/54878441-69fa0a80-4e2d-11e9-95a6-8143c1c1cbe9.jpg" width="216" height="448"/>
 
    Page d'ajout d'un bâteau dans la base :
    
@@ -30,6 +30,10 @@
    
    <img src="https://user-images.githubusercontent.com/48830209/54878422-f9eb8480-4e2c-11e9-8be1-027f37a6ef69.jpg"                     width="216" height="448"/>
    
-   Page de modification des données de la zone de stockage séléctionner :
+   Page de gestion de chargement et de déchargement :
    
-   <img src="https://user-images.githubusercontent.com/48830209/54878441-69fa0a80-4e2d-11e9-95a6-8143c1c1cbe9.jpg"                     width="216" height="448"/>
+   <img src="https://user-images.githubusercontent.com/48830209/54881634-1d74f600-4e52-11e9-8cbc-82bd055b3100.jpg"                     width="216" height="448"/> <img src="https://user-images.githubusercontent.com/48830209/54881655-54e3a280-4e52-11e9-9f8d-d2b99cabcc07.jpg" width="216" height="448"/> 
+   
+   <img src="https://user-images.githubusercontent.com/48830209/54881672-6d53bd00-4e52-11e9-9d21-f78998552594.jpg" width="216" height="448"/> <img src="https://user-images.githubusercontent.com/48830209/54881679-88263180-4e52-11e9-96f2-b104157db8f7.jpg" width="216" height="448"/>
+   
+   
