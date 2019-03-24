@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navig" app:startDestination="@id/addBoat">
+
+    <activity android:id="@+id/addBoat" android:name="fr.orion.caen_ouistreham.AddBoat" android:label="activity_addboat"
+              tools:layout="@layout/activity_add_boat"/>
+    <activity android:id="@+id/listBoat" android:name="fr.orion.caen_ousitreham.ListBoat"
+              android:label="activity_list_boat" tools:layout="@layout/activity_list_boat"/>
+    <activity android:id="@+id/menu" android:name="fr.orion.caen_ousitreham.Menu" android:label="content_menu"
+              tools:layout="@layout/content_menu"/>
+</navigation>

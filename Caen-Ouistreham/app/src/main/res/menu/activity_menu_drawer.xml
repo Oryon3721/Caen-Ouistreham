@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+    </group>
+
+    <item android:title="Ship">
+        <menu>
+            <item
+                    android:id="@+id/add_boat"
+                    android:icon="@drawable/bar_boat"
+                    android:title="Add Ship"/>
+            <item
+                    android:id="@+id/list_ship"
+                    android:icon="@drawable/ship"
+                    android:title="Ship List"/>
+        </menu>
+    </item>
+
+    <item android:title="Storage">
+        <menu>
+            <item
+                    android:id="@+id/add_storage_area"
+                    android:icon="@drawable/silo2"
+                    android:title="Add Storage Area"/>
+            <item
+                    android:id="@+id/list_storage_area"
+                    android:icon="@drawable/silo"
+                    android:title="List Of Storage Areas"/>
+        </menu>
+    </item>
+
+</menu>

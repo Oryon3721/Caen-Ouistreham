@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Caen-Ouistreham</string>
+
+    <string name="save">Save</string>
+    <string name="show">Show</string>
+    <string name="empty"></string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="nlloyds">NLloyds</string>
+    <string name="nom_du_navire">Nom du navire</string>
+    <string name="libelle_du_fret">Libelle du fret</string>
+    <string name="Quantite_de_fret">Quantité de fret</string>
+    <string name="type_du_fret">Type de fret</string>
+    <string name="reference">Reference</string>
+    <string name="capacit_du_stockage">Capacité du stockage</string>
+    <string name="delete">Delete</string>
+    <string name="decharger">DECHARGER</string>
+    <string name="charger">CHARGER</string>
+    <string name="no_ship_for_storage">No ship for storage</string>
+    <string name="name_of_boat">Name of boat :</string>
+    <string name="quantity_of_freight">Quantity of freight in the boat: </string>
+    <string name="_4542">4542</string>
+    <string name="quantity_of_freight_in_the_storage">Quantity of freight in the storage :</string>
+    <string name="capacite_maximun">Capacite Maximun</string>
+</resources>

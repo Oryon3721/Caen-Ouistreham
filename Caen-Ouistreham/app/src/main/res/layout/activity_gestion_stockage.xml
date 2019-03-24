@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GestionStockage">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/linearLayout"
+            android:gravity="center"
+            android:orientation="vertical">
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp">
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="16dp">
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:id="@+id/TextView_BLABLA_NOM_NAVIRE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/name_of_boat"/>
+
+                    <TextView
+                            android:id="@+id/TextView_NOM_NAVIRE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:id="@+id/TextView_BLABLA_QUANTITEFRET"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/quantity_of_freight"/>
+
+                    <TextView
+                            android:id="@+id/TextView_QUANTITEFRET"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                <TextView
+                        android:id="@+id/TextView_Error_Message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_ship_for_storage"/>
+
+                <NumberPicker
+                        android:id="@+id/picker_listeNavire"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Seekbar_POURCENTAGE"
+                android:max="100"
+                android:min="1"
+                android:progress="100"/>
+        <TextView
+                android:id="@+id/TextView_TEXT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/TextView_REFERENCE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+            <TextView
+                    android:id="@+id/TextView_POURCENTAGE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ProgressBar
+                    android:id="@+id/progressbar_capacite"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:indeterminate="false"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quantity_of_freight_in_the_storage"/>
+            <TextView
+                    android:id="@+id/TextView_QUANTITE_STORAGE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp">
+            <Button
+                    android:id="@+id/button_DECHARGER"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/decharger"/>
+            <Button
+                    android:id="@+id/button_CHARGER"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/charger"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
