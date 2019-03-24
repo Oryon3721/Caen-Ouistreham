@@ -1,13 +1,9 @@
-package fr.orion.caen_ouistreham
+package fr.orion.caen_ousitreham
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import fr.orion.caen_ousitreham.Cstockage
-import fr.orion.caen_ousitreham.DatabaseHandler
-import fr.orion.caen_ousitreham.Menu
-import fr.orion.caen_ousitreham.R
 import kotlinx.android.synthetic.main.activity_add_stockage.*
 
 class AddStockage : AppCompatActivity() {

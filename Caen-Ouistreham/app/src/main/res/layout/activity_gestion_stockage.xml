@@ -40,7 +40,36 @@
                     <TextView
                             android:id="@+id/TextView_NOM_NAVIRE"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:textStyle="bold"/>
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/name_of_boat"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/name_of_boat"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -56,7 +85,8 @@
                     <TextView
                             android:id="@+id/TextView_QUANTITEFRET"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:textStyle="bold"/>
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
 

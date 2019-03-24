@@ -21,7 +21,7 @@
         <activity android:name=".InfoBoat"
                   android:screenOrientation="portrait">
         </activity>
-        <activity android:name="fr.orion.caen_ouistreham.AddStockage"
+        <activity android:name=".AddStockage"
                   android:screenOrientation="portrait">
         </activity>
         <activity
@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-                android:name="fr.orion.caen_ouistreham.AddBoat"
+                android:name=".AddBoat"
                 android:screenOrientation="portrait">
         </activity>
     </application>

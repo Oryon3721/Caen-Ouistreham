@@ -17,15 +17,35 @@ class InfoStockage : AppCompatActivity() {
         val cstockage = dbHandler?.getOneStockage(i.toString())
 
         val listType: Array<String> = arrayOf("Conteneur", "Silo", "Liquide")
-        val listUnite: Array<String> = arrayOf("m^3", "Littre", "Numero")
+        val listeN: Array<String> = arrayOf("Numero")
+        val listeL: Array<String> = arrayOf("m^3")
 
         picker_stockage_TYPE.minValue = 0
         picker_stockage_TYPE.maxValue = listType.size - 1
         picker_stockage_TYPE.displayedValues = listType
+        picker_stockage_TYPE.value = 1
 
         picker_stockage_UNITE.minValue = 0
-        picker_stockage_UNITE.maxValue = listUnite.size - 1
-        picker_stockage_UNITE.displayedValues = listUnite
+        picker_stockage_UNITE.maxValue = listeL.size - 1
+        picker_stockage_UNITE.displayedValues = listeL
+        picker_stockage_UNITE.value = 0
+
+        picker_stockage_TYPE.setOnValueChangedListener { picker, oldVal, newVal ->
+            when (picker.value){
+                0 ->{
+                    picker_stockage_UNITE.minValue = 0
+                    picker_stockage_UNITE.maxValue = 0
+                    picker_stockage_UNITE.displayedValues = listeN
+                    picker_stockage_UNITE.value = 0
+                }
+                1 -> {
+                    picker_stockage_UNITE.minValue = 0
+                    picker_stockage_UNITE.maxValue = 0
+                    picker_stockage_UNITE.displayedValues = listeL
+                    picker_stockage_UNITE.value = 0
+                }
+            }
+        }
 
         if (cstockage != null){
             editText_REFERENCE.setText(cstockage.reference)
@@ -35,15 +55,6 @@ class InfoStockage : AppCompatActivity() {
                 listType[0] -> 0
                 listType[1] -> 1
                 listType[2] -> 2
-                else -> {
-                    1
-                }
-            }
-
-            picker_stockage_UNITE.value = when (cstockage.unite){
-                listUnite[0] -> 0
-                listUnite[1] -> 1
-                listUnite[2] -> 2
                 else -> {
                     1
                 }
@@ -60,11 +71,10 @@ class InfoStockage : AppCompatActivity() {
                 }
             }
             val valeurpickerUnite: String = when (picker_stockage_UNITE.value){
-                0 -> listUnite[0]
-                1 -> listUnite[1]
-                2 -> listUnite[2]
+                0 -> "Numero"
+                1 -> "m^3"
                 else -> {
-                    listUnite[1]
+                    "m^3"
                 }
             }
             val stockage = Cstockage(editText_REFERENCE.text.toString(), valeurpickerType, editText_CAPACITEMAX.text.toString().toInt(), cstockage!!.capaUtil, valeurpickerUnite, 0)

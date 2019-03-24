@@ -57,12 +57,7 @@ class GestionStockage : AppCompatActivity() {
             TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
             TextView_TEXT.text = "100%"
 
-            when {
-                cstockage!!.QuelPourcentage().toInt() <= 50 -> progressbar_capacite.progressDrawable.setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN)
-                cstockage!!.QuelPourcentage().toInt() <= 75 -> progressbar_capacite.progressDrawable.setColorFilter(Color.YELLOW, android.graphics.PorterDuff.Mode.SRC_IN)
-                cstockage!!.QuelPourcentage().toInt() <= 95 -> progressbar_capacite.progressDrawable.setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
-                cstockage!!.QuelPourcentage().toInt() <= 100 -> progressbar_capacite.progressDrawable.setColorFilter(Color.BLACK, android.graphics.PorterDuff.Mode.SRC_IN)
-            }
+            progressionBar()
 
             picker_listeNavire.setOnValueChangedListener { picker, oldVal, newVal ->
                 TextView_TEXT.text = "Transfer cargo from the ${cnavire[picker.value].nomNavire} ship"
@@ -102,12 +97,7 @@ class GestionStockage : AppCompatActivity() {
                             TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
 
                             progressbar_capacite.progress = cstockage!!.capaUtil*100/cstockage!!.capaDispo
-                            when {
-                                progressbar_capacite.progress <= 50 -> progressbar_capacite.progressDrawable.setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN)
-                                progressbar_capacite.progress <= 75 -> progressbar_capacite.progressDrawable.setColorFilter(Color.YELLOW, android.graphics.PorterDuff.Mode.SRC_IN)
-                                progressbar_capacite.progress <= 95 -> progressbar_capacite.progressDrawable.setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
-                                progressbar_capacite.progress <= 100 -> progressbar_capacite.progressDrawable.setColorFilter(Color.BLACK, android.graphics.PorterDuff.Mode.SRC_IN)
-                            }
+                            progressionBar()
                             TextView_POURCENTAGE.text = "${progressbar_capacite.progress}%"
                         }
                         override fun onFinish() {
@@ -118,12 +108,7 @@ class GestionStockage : AppCompatActivity() {
                                 TextView_TEXT.text = "Transfert reussi"
                                 TextView_QUANTITEFRET.text = Navire!!.qteFret.toString()
                                 TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
-                                when {
-                                    progressbar_capacite.progress <= 50 -> progressbar_capacite.progressDrawable.setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN)
-                                    progressbar_capacite.progress <= 75 -> progressbar_capacite.progressDrawable.setColorFilter(Color.YELLOW, android.graphics.PorterDuff.Mode.SRC_IN)
-                                    progressbar_capacite.progress <= 95 -> progressbar_capacite.progressDrawable.setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
-                                    progressbar_capacite.progress <= 100 -> progressbar_capacite.progressDrawable.setColorFilter(Color.BLACK, android.graphics.PorterDuff.Mode.SRC_IN)
-                                }
+                                progressionBar()
                                 TextView_POURCENTAGE.text = "${progressbar_capacite.progress}%"
                                 finiTransfert = 10
                             }
@@ -164,12 +149,7 @@ class GestionStockage : AppCompatActivity() {
                             TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
 
                             progressbar_capacite.progress = cstockage!!.capaUtil*100/cstockage!!.capaDispo
-                            when {
-                                progressbar_capacite.progress <= 50 -> progressbar_capacite.progressDrawable.setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN)
-                                progressbar_capacite.progress <= 75 -> progressbar_capacite.progressDrawable.setColorFilter(Color.YELLOW, android.graphics.PorterDuff.Mode.SRC_IN)
-                                progressbar_capacite.progress <= 95 -> progressbar_capacite.progressDrawable.setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
-                                progressbar_capacite.progress <= 100 -> progressbar_capacite.progressDrawable.setColorFilter(Color.BLACK, android.graphics.PorterDuff.Mode.SRC_IN)
-                            }
+                            progressionBar()
                             TextView_POURCENTAGE.text = "${progressbar_capacite.progress}%"
                         }
                         override fun onFinish() {
@@ -180,12 +160,7 @@ class GestionStockage : AppCompatActivity() {
                                 TextView_TEXT.text = "Transfert reussi"
                                 TextView_QUANTITEFRET.text = Navire!!.qteFret.toString()
                                 TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
-                                when {
-                                    progressbar_capacite.progress <= 50 -> progressbar_capacite.progressDrawable.setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN)
-                                    progressbar_capacite.progress <= 75 -> progressbar_capacite.progressDrawable.setColorFilter(Color.YELLOW, android.graphics.PorterDuff.Mode.SRC_IN)
-                                    progressbar_capacite.progress <= 95 -> progressbar_capacite.progressDrawable.setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
-                                    progressbar_capacite.progress <= 100 -> progressbar_capacite.progressDrawable.setColorFilter(Color.BLACK, android.graphics.PorterDuff.Mode.SRC_IN)
-                                }
+                                progressionBar()
                                 TextView_POURCENTAGE.text = "${progressbar_capacite.progress}%"
                                 finiTransfert = 10
                             }
@@ -222,5 +197,12 @@ class GestionStockage : AppCompatActivity() {
         finish()
     }
 
-
+    fun progressionBar(){
+        when {
+            progressbar_capacite.progress <= 50 -> progressbar_capacite.progressDrawable.setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN)
+            progressbar_capacite.progress <= 75 -> progressbar_capacite.progressDrawable.setColorFilter(Color.YELLOW, android.graphics.PorterDuff.Mode.SRC_IN)
+            progressbar_capacite.progress <= 95 -> progressbar_capacite.progressDrawable.setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN)
+            progressbar_capacite.progress <= 100 -> progressbar_capacite.progressDrawable.setColorFilter(Color.BLACK, android.graphics.PorterDuff.Mode.SRC_IN)
+        }
+    }
 }
