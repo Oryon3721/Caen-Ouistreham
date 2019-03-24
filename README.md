@@ -1,1 +1,39 @@
 # Ports_Caen-Ousitreham
+
+
+   Page d'acceuil :
+
+   <img src="https://user-images.githubusercontent.com/48830209/54878438-46cf5b00-4e2d-11e9-9a9e-1c4e044f2121.jpg"                     width="216" height="448" border="5"/> <img src="https://user-images.githubusercontent.com/48830209/54878209-b93e3c00-4e29-11e9-8179-f7cda9f23227.jpg" width="216" height="448"/> <img src="https://user-images.githubusercontent.com/48830209/54878441-69fa0a80-4e2d-11e9-95a6-8143c1c1cbe9.jpg" width="216" height="448"/>
+
+   Page d'ajout d'un bâteau dans la base :
+   
+   <img src="https://user-images.githubusercontent.com/48830209/54878316-30c09b00-4e2b-11e9-9b49-de1f09c0e76c.jpg"                     width="216" height="448"/>
+     
+   Page de liste des bâteaux :
+   
+   <img src="https://user-images.githubusercontent.com/48830209/54878359-be9c8600-4e2b-11e9-831a-264dce7c4bd8.jpg"                     width="216" height="448"/>
+        
+   Page de modification des données du bâteau séléctionner :
+   
+   <img src="https://user-images.githubusercontent.com/48830209/54878377-f3a8d880-4e2b-11e9-8315-fcc77e95e360.jpg"                     width="216" height="448"/>
+   
+   Page d'ajout d'un lieu de stockage dans la base :
+   
+   <img src="https://user-images.githubusercontent.com/48830209/54878408-c4df3200-4e2c-11e9-81c3-78602b9235a3.jpg"                     width="216" height="448"/>
+   
+   Page de liste des zone de stockage :
+   
+   <img src="https://user-images.githubusercontent.com/48830209/54878431-27d0c900-4e2d-11e9-98f1-4b22fdf481f8.jpg"                     width="216" height="448"/>
+   
+        
+   Page de modification des données de la zone de stockage séléctionner :
+   
+   <img src="https://user-images.githubusercontent.com/48830209/54878422-f9eb8480-4e2c-11e9-8be1-027f37a6ef69.jpg"                     width="216" height="448"/>
+   
+   Page de gestion de chargement et de déchargement :
+   
+   <img src="https://user-images.githubusercontent.com/48830209/54881634-1d74f600-4e52-11e9-8cbc-82bd055b3100.jpg"                     width="216" height="448"/> <img src="https://user-images.githubusercontent.com/48830209/54881655-54e3a280-4e52-11e9-9f8d-d2b99cabcc07.jpg" width="216" height="448"/> 
+   
+   <img src="https://user-images.githubusercontent.com/48830209/54881672-6d53bd00-4e52-11e9-9d21-f78998552594.jpg" width="216" height="448"/> <img src="https://user-images.githubusercontent.com/48830209/54881679-88263180-4e52-11e9-96f2-b104157db8f7.jpg" width="216" height="448"/>
+   
+   
