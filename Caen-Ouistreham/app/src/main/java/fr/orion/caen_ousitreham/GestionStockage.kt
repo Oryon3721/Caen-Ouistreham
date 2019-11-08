@@ -16,7 +16,7 @@ class GestionStockage : AppCompatActivity() {
     private var i: String? = null
     private var finiTransfert: Int = 10
     private val dbHandler: DatabaseHandler? = DatabaseHandler(this)
-    private var cstockage: Cstockage? = null
+    private var storage: Cstockage? = null
     private var fininavire: Int = 0
     private var finistockage: Int = 0
     private var Navire: Cnavire? = null
@@ -27,42 +27,42 @@ class GestionStockage : AppCompatActivity() {
         setContentView(R.layout.activity_gestion_stockage)
 
         i = intent.getStringExtra ("reference")
-        cstockage = dbHandler?.getOneStockage(i.toString())
+        storage = dbHandler?.getOneStockage(i.toString())
 
-        val cnavire = dbHandler?.getSpecificalNavire(cstockage!!.type)
-        val listNavire: ArrayList<String> = arrayListOf()
+        val listShip = dbHandler?.getSpecificalNavire(storage!!.type)
+        val listNavirenLloyds: ArrayList<String> = arrayListOf()
 
 
-        if (cstockage != null){
-            cnavire!!.forEach {
-                listNavire.add(it.nLloyds.toString())
+        if (storage != null){
+            listShip!!.forEach {
+                listNavirenLloyds.add(it.nLloyds.toString())
             }
 
-            if (listNavire.size > 0){
+            if (listNavirenLloyds.size > 0){
                 picker_listeNavire.minValue = 0
-                picker_listeNavire.maxValue = listNavire.size - 1
-                picker_listeNavire.displayedValues = listNavire.toTypedArray()
-                TextView_TEXT.text = "Transfer cargo from the ${cnavire[picker_listeNavire.value].nomNavire} ship"
+                picker_listeNavire.maxValue = listNavirenLloyds.size - 1
+                picker_listeNavire.displayedValues = listNavirenLloyds.toTypedArray()
+                TextView_TEXT.text = "Transfer cargo from the ${listShip[picker_listeNavire.value].nomNavire} ship"
                 TextView_Error_Message.visibility = View.GONE
             }
             else{
                 picker_listeNavire.visibility = View.GONE
             }
 
-            progressbar_capacite.progress = cstockage!!.QuelPourcentage().toInt()
-            TextView_POURCENTAGE.text = "${cstockage!!.QuelPourcentage().toInt()}%"
+            progressbar_capacite.progress = storage!!.QuelPourcentage().toInt()
+            TextView_POURCENTAGE.text = "${storage!!.QuelPourcentage().toInt()}%"
 
-            TextView_NOM_NAVIRE.text = cnavire[picker_listeNavire.value].nomNavire
-            TextView_QUANTITEFRET.text = cnavire[picker_listeNavire.value].qteFret.toString()
-            TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
+            TextView_NOM_NAVIRE.text = listShip[picker_listeNavire.value].nomNavire
+            TextView_QUANTITEFRET.text = listShip[picker_listeNavire.value].qteFret.toString()
+            TextView_QUANTITE_STORAGE.text = storage!!.capaUtil.toString()
             TextView_TEXT.text = "100%"
 
             progressionBar()
 
             picker_listeNavire.setOnValueChangedListener { picker, oldVal, newVal ->
-                TextView_TEXT.text = "Transfer cargo from the ${cnavire[picker.value].nomNavire} ship"
-                TextView_NOM_NAVIRE.text = cnavire[picker.value].nomNavire
-                TextView_QUANTITEFRET.text = cnavire[picker.value].qteFret.toString()
+                TextView_TEXT.text = "Transfer cargo from the ${listShip[picker.value].nomNavire} ship"
+                TextView_NOM_NAVIRE.text = listShip[picker.value].nomNavire
+                TextView_QUANTITEFRET.text = listShip[picker.value].qteFret.toString()
             }
 
             Seekbar_POURCENTAGE.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -73,14 +73,14 @@ class GestionStockage : AppCompatActivity() {
 
             button_DECHARGER.setOnClickListener {
 
-                Navire = cnavire[picker_listeNavire.value]
+                Navire = listShip[picker_listeNavire.value]
 
                 var quantiteAjouter = Navire!!.qteFret*Seekbar_POURCENTAGE.progress/100
                 val total = quantiteAjouter
                 fininavire = Navire!!.qteFret - total
-                finistockage = cstockage!!.capaUtil + total
+                finistockage = storage!!.capaUtil + total
 
-                if (cstockage!!.Stocker(quantiteAjouter) && quantiteAjouter > 0){
+                if (storage!!.Stocker(quantiteAjouter) && quantiteAjouter > 0){
 
                     quantiteAjouter /= 100
 
@@ -93,21 +93,21 @@ class GestionStockage : AppCompatActivity() {
 
                             Navire!!.qteFret -= quantiteAjouter
                             TextView_QUANTITEFRET.text = Navire!!.qteFret.toString()
-                            cstockage!!.capaUtil += quantiteAjouter
-                            TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
+                            storage!!.capaUtil += quantiteAjouter
+                            TextView_QUANTITE_STORAGE.text = storage!!.capaUtil.toString()
 
-                            progressbar_capacite.progress = cstockage!!.capaUtil*100/cstockage!!.capaDispo
+                            progressbar_capacite.progress = storage!!.capaUtil*100/storage!!.capaDispo
                             progressionBar()
                             TextView_POURCENTAGE.text = "${progressbar_capacite.progress}%"
                         }
                         override fun onFinish() {
                             Navire!!.qteFret = fininavire
-                            cstockage!!.capaUtil = finistockage
-                            progressbar_capacite.progress = cstockage!!.capaUtil*100/cstockage!!.capaDispo
-                            if (dbHandler!!.updateDataStockage(cstockage!!, cstockage!!) && dbHandler.updateDataNavire(Navire!!)){
+                            storage!!.capaUtil = finistockage
+                            progressbar_capacite.progress = storage!!.capaUtil*100/storage!!.capaDispo
+                            if (dbHandler!!.updateDataStockage(storage!!, storage!!) && dbHandler.updateDataNavire(Navire!!)){
                                 TextView_TEXT.text = "Transfert reussi"
                                 TextView_QUANTITEFRET.text = Navire!!.qteFret.toString()
-                                TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
+                                TextView_QUANTITE_STORAGE.text = storage!!.capaUtil.toString()
                                 progressionBar()
                                 TextView_POURCENTAGE.text = "${progressbar_capacite.progress}%"
                                 finiTransfert = 10
@@ -125,12 +125,12 @@ class GestionStockage : AppCompatActivity() {
 
             button_CHARGER.setOnClickListener {
 
-                Navire = cnavire[picker_listeNavire.value]
+                Navire = listShip[picker_listeNavire.value]
 
-                var quantiteEnMoin = cstockage!!.capaUtil*Seekbar_POURCENTAGE.progress/100
+                var quantiteEnMoin = storage!!.capaUtil*Seekbar_POURCENTAGE.progress/100
                 val total = quantiteEnMoin
                 fininavire = Navire!!.qteFret + total
-                finistockage = cstockage!!.capaUtil - total
+                finistockage = storage!!.capaUtil - total
 
                 if (Navire!!.Charger(quantiteEnMoin) && quantiteEnMoin > 0){
 
@@ -145,21 +145,21 @@ class GestionStockage : AppCompatActivity() {
 
                             Navire!!.qteFret += quantiteEnMoin
                             TextView_QUANTITEFRET.text = Navire!!.qteFret.toString()
-                            cstockage!!.capaUtil -= quantiteEnMoin
-                            TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
+                            storage!!.capaUtil -= quantiteEnMoin
+                            TextView_QUANTITE_STORAGE.text = storage!!.capaUtil.toString()
 
-                            progressbar_capacite.progress = cstockage!!.capaUtil*100/cstockage!!.capaDispo
+                            progressbar_capacite.progress = storage!!.capaUtil*100/storage!!.capaDispo
                             progressionBar()
                             TextView_POURCENTAGE.text = "${progressbar_capacite.progress}%"
                         }
                         override fun onFinish() {
                             Navire!!.qteFret = fininavire
-                            cstockage!!.capaUtil = finistockage
-                            progressbar_capacite.progress = cstockage!!.capaUtil*100/cstockage!!.capaDispo
-                            if (dbHandler!!.updateDataStockage(cstockage!!, cstockage!!) && dbHandler.updateDataNavire(Navire!!)){
+                            storage!!.capaUtil = finistockage
+                            progressbar_capacite.progress = storage!!.capaUtil*100/storage!!.capaDispo
+                            if (dbHandler!!.updateDataStockage(storage!!, storage!!) && dbHandler.updateDataNavire(Navire!!)){
                                 TextView_TEXT.text = "Transfert reussi"
                                 TextView_QUANTITEFRET.text = Navire!!.qteFret.toString()
-                                TextView_QUANTITE_STORAGE.text = cstockage!!.capaUtil.toString()
+                                TextView_QUANTITE_STORAGE.text = storage!!.capaUtil.toString()
                                 progressionBar()
                                 TextView_POURCENTAGE.text = "${progressbar_capacite.progress}%"
                                 finiTransfert = 10
@@ -182,14 +182,14 @@ class GestionStockage : AppCompatActivity() {
         when (finiTransfert) {
             11 -> {
                 Navire!!.qteFret = fininavire
-                cstockage!!.capaUtil = finistockage
-                dbHandler!!.updateDataStockage(cstockage!!, cstockage!!)
+                storage!!.capaUtil = finistockage
+                dbHandler!!.updateDataStockage(storage!!, storage!!)
                 dbHandler.updateDataNavire(Navire!!)
             }
             21 -> {
                 Navire!!.qteFret = fininavire
-                cstockage!!.capaUtil = finistockage
-                dbHandler!!.updateDataStockage(cstockage!!, cstockage!!)
+                storage!!.capaUtil = finistockage
+                dbHandler!!.updateDataStockage(storage!!, storage!!)
                 dbHandler.updateDataNavire(Navire!!)
             }
         }

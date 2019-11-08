@@ -9,4 +9,6 @@
               android:label="activity_list_boat" tools:layout="@layout/activity_list_boat"/>
     <activity android:id="@+id/menu" android:name="fr.orion.caen_ousitreham.Menu" android:label="content_menu"
               tools:layout="@layout/content_menu"/>
+    <activity android:id="@+id/infoStockage" android:name="fr.orion.caen_ousitreham.InfoStockage"
+              android:label="activity_info_stockage" tools:layout="@layout/activity_info_stockage"/>
 </navigation>
